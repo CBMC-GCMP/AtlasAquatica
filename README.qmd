@@ -1,6 +1,8 @@
 ---
 title: "Atlas Aquatica"
-format: gfm
+format: 
+  gfm:
+    code-fold: true
 ---
 
 Our endeavor, the Atlas Aquatica, is a result of an international collaboration among the Centro para la Biodiversidad Marina y la Conservación in Mexico; the Scripps Institution of Oceanography -- University of California San Diego, and the University of California Santa Barbara, USA; the University of British Columbia and the Simon Fraser University, Canada; and the TREES, North-West University, Potchefstroom, South Africa. Here, we will detail the distribution of the diving sites, provide a global economic estimate of the diving operators, and identify gaps in knowledge.
@@ -32,5 +34,13 @@ read_csv("data/scuba_diving_operators_v_1_11102022_encr.csv") |>
 ```
 
 
-The diving operators dataset has been encripted and some informations omitted in order to protect the privacy of the operators. 
+The diving operators dataset has been encrypted and some information omitted in order to protect the privacy of the operators. 
 
+
+
+4. Literature review of marine tourism economic estimates:
+
+```{r, echo=TRUE, warning=FALSE, message=FALSE}
+read_csv("data/Literature_economic_value.csv") |> 
+          glimpse()
+```
