@@ -9,13 +9,12 @@ jackie_all <- function(x) {
   source("R/economic_estimate.R")
   source("R/jackie_all.R")
   
-  surveys <- read_csv("data/operators_surveys_matched_prices_mex_padi_final.csv")
+  surveys <- read_csv("data/scuba_diving_operators_v_1_11102022.csv")
   names(surveys) <- str_replace_all(names(surveys), "_", ".")
   
 
   surveyed <- surveys %>% 
     filter(!is.na(name.sur)) %>% 
-    filter(Country != "Afghanistan") %>% 
     pull(ID) %>% 
     sample(length(.)*0.05, replace = F) %>% unique()
   
