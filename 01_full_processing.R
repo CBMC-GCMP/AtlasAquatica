@@ -23,7 +23,8 @@ dir.create("results_iteration/", showWarnings = F)
 
 
 ## Number of iteration for the jackknife
-iterations_n <- 999
+iterations_n <- 10
+
 
 ## Number of clusters for the parallel processing, you can set the percentage of power you want to deploy, eg. for 50% use 0.5
 
