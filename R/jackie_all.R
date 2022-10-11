@@ -9,7 +9,7 @@ jackie_all <- function(x) {
   source("R/economic_estimate.R")
   source("R/jackie_all.R")
   
-  surveys <- read_csv("data/scuba_diving_operators_v_1_11102022.csv")
+  surveys <- read_csv("data/scuba_diving_operators_v_1_11102022_encr.csv")
   names(surveys) <- str_replace_all(names(surveys), "_", ".")
   
 
@@ -20,9 +20,7 @@ jackie_all <- function(x) {
   
   sample <- surveys %>%
     filter(!ID %in% surveyed) %>% 
-    mutate(Q63 = ifelse(name.sur == "oceanos, expediciones y buceo", "Yes", Q63)) %>%
-    mutate(Q64 = ifelse(name.sur == "octopus diving center", NaN, Q64)) %>%
-    mutate(
+            mutate(
       trip.type =
         case_when(
           Q63 == "Yes" & Q74 == "Yes" ~ "DT_LB",

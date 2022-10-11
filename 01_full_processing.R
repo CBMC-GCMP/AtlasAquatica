@@ -32,7 +32,7 @@ ncl <- detectCores() * 0.8
 
 
 ## Loading data
-surveys <- read_csv("data/scuba_diving_operators_v_1_11102022.csv")
+surveys <- read_csv("data/scuba_diving_operators_v_1_11102022_encr.csv")
 names(surveys) <- str_replace_all(names(surveys), "_", ".")
 
 
